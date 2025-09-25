@@ -1,4 +1,4 @@
-# キッズセーフ 越前市 吉野地区 / KidsSafe for Echizen-city Yoshino
+# 吉野地区　デジタルマップ / Yoshino digital map
 
 - https://code4fukui.github.io/kidssafe-yoshino/
 
@@ -65,3 +65,4 @@
 
 - この地区のキッズセーフについて [Issues](../../issues)
 - キッズセーフのアプリについて [キッズセーフのIssues](https://github.com/code4fukui/kidssafe/issues)
+
