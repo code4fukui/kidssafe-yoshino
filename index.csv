@@ -2,3 +2,12 @@
 110番の家,110ban-house_latlng.csv,house110_icon.png
 吉野おさんぽマップ,yoshinoosanpo_XY.csv,osanpo.png
 事件事故箇所,jikenjiko.csv,jiko_car.png
+R７探検マップ(公園),yoshino_R7tanken_01koen.csv,01koen.png
+R７探検マップ(生き物),yoshino_R7tanken_02ikimono.csv,02ikimono.png
+R７探検マップ(景色),yoshino_R7tanken_03keshiki.csv,03keshiki.png
+R７探検マップ(花・花壇),yoshino_R7tanken_04hana.csv,04hana.png
+R７探検マップ(祭・行事),yoshino_R7tanken_05matsuri.csv,05matsuri.png
+R７探検マップ(映えスポット),yoshino_R7tanken_06bae.csv,06bae.png
+R７探検マップ(公共施設),yoshino_R7tanken_07shisetsu.csv,07shisetsu.png
+R７探検マップ(寺・神社),yoshino_R7tanken_08tera.csv,08tera.png
+R７探検マップ(自販機),yoshino_R7tanken_09jihanki.csv,09jihanki.png
