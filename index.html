@@ -96,6 +96,21 @@
       }
       tr.appendChild(td);
     }
+
+    // lat, lng が存在する場合に「地図」行を追加
+    if ("lat" in d && "lng" in d) {
+      const tr = cr("tr");
+      tbl.appendChild(tr);
+      const th = cr("th");
+      th.textContent = "地図";
+      th.style.whiteSpace = "nowrap";
+      tr.appendChild(th);
+      const td = cr("td");
+      td.style.minWidth = "15em";
+      td.innerHTML = `<a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${d.lat},${d.lng}" target="_blank">ストリートビューを見る</a>`;
+      tr.appendChild(td);
+    }
+
     return tbl;
   };
 
@@ -493,6 +508,7 @@
     padding: .3em;
   }
 </style>
+
 
 
 
