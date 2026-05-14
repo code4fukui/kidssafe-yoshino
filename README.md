@@ -1,68 +1,48 @@
-# 吉野地区　デジタルマップ / Yoshino digital map
+# Yoshino Digital Map (kidssafe-yoshino)
 
-- https://code4fukui.github.io/kidssafe-yoshino/
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-- 〇〇市〇〇地区の地域安全マップを作成して、スマホやパソコンで見られる形で共有するツールです
-- ExcelやNumbersを使ってCSVデータを編集しアップロードすることで更新できます
-- [キッズセーフ by Code for FUKUI](https://github.com/code4fukui/kidssafe/) を使って作られています
+This repository contains the data and code for the **Yoshino District Discovery Map** (吉野地区発見マップ), an interactive community safety and discovery map for the Yoshino district in Echizen City, Japan.
 
-## サイトをホーム画面に追加する方法
-◆スマホの操作が苦手な方にも、すぐにキッズセーフが閲覧できるように分かりやすい説明を作りました。
+The map is built using the [KidsSafe project by Code for FUKUI](https://github.com/code4fukui/kidssafe/) and is designed to be easily updated by community members using simple CSV files.
 
-・[ホーム画面登録(android）.pptx](https://github.com/code4fukui/kidssafe-okamoto/files/14518682/android.pptx)
+## Features
 
-・[ホーム画面登録(iphone).pptx](https://github.com/code4fukui/kidssafe-okamoto/files/14518806/iphone.pptx)
+- **Interactive Map**: View community-submitted points of interest, safety locations (like AEDs), and local landmarks.
+- **CSV-Powered**: All point data is managed through simple CSV files (e.g., [`aed.csv`](aed.csv)), which can be edited with spreadsheet software like Excel or Numbers.
+- **Route Overlays**: Displays GeoJSON data for paths and routes, such as school routes (`tsugakuro.geojson`).
+- **Rich Details**: Click on any point to see more information, including descriptive text, photos, and a direct link to Google Street View.
+- **Keyword Filter**: Instantly filter visible map points by typing in the search bar.
+- **Mobile-Friendly**: A responsive design that works on any device and can be added to your smartphone's home screen for quick access.
+- **Multilingual Support**: The map interface can be switched to other languages.
 
-## サイトの表示を外国語に切り替える方法
+## How to Manage Map Data
 
-◆サイトの表示を外国語に切り替えて表示したいという時の設定方法を解説してあります。
+Anyone can contribute to the map by updating the data files in this repository.
 
-・[外国語変換方法(iphone).pptx](https://github.com/code4fukui/kidssafe-okamoto/files/14518975/iphone.pptx)
+### Updating Existing Data
 
-## データの更新方法
+1.  Navigate to the data file you want to change (e.g., [`yoshino_R7tanken_07shisetsu.csv`](yoshino_R7tanken_07shisetsu.csv)).
+2.  Click the "Download raw file" button to save it to your computer.
+3.  Open and edit the file in a spreadsheet program.
+4.  Upload the modified file back to the repository to update the map.
 
-1. 変更したいデータを確認する (例、[aed.csv](aed.csv))
-2. ダウンロードボタンを押し、ダウンロードする
+### Adding a New Data Layer
 
-<img width="306" alt="image" src="https://github.com/code4fukui/kidssafe-template/assets/1715217/053db2b7-1931-4b7c-b369-326523190d64">
+1.  Download the [`template.csv`](template.csv) file.
+2.  Open it in a spreadsheet program and add your new points of interest. Each point should have at least a `lat` (latitude) and `lng` (longitude). You can add any other columns you need (e.g., `名称` for name, `説明` for description, `写真` for a photo).
+3.  Save the file in CSV format with a descriptive name (e.g., `historic_sites.csv`).
+4.  Download the [`index.csv`](index.csv) file.
+5.  Add a new row to `index.csv` to register your new data layer, specifying the filename, the name to display on the map, and a default icon.
+6.  Upload both your new CSV file and the updated `index.csv` to the repository.
 
-3. Excelで編集する
-4. 位置情報は、「[緯度経度地図](https://fukuno.jig.jp/app/map/latlng/#%E8%B6%8A%E5%89%8D%E5%B8%82)」から該当場所に動かして、Geo3x3欄に表示された文字列を項目Geo3x3にコピーする
+### Adding Custom Icons
 
-<img width="511" alt="image" src="https://user-images.githubusercontent.com/1715217/219602296-2d3b72ce-581a-4ba8-8c69-edbe1b95ee76.png">
+1.  Prepare your icon as a PNG image with a unique, simple filename (e.g., `shrine_icon.png`).
+2.  Upload the image file to the [`icon`](icon) folder in this repository.
+3.  In your data CSV or in [`index.csv`](index.csv), enter the new filename in the `icon` column for the corresponding data points.
+4.  Commit the changes. The map will now display your custom icon.
 
-5. Excelで保存する
-6. [./](./) に編集したファイルをドロップし、アップロード(Upload)する
+## License
 
-<img width="306" alt="image" src="https://github.com/code4fukui/kidssafe-template/assets/1715217/53bdf652-f38a-47dc-8b3e-defa62f989ce">
-
-7. 1分ほど待つと更新される（しばらくはキャッシュが使われることがあるので、プライベートモードなどで開いて確認するといい）
-
-## データ種の追加方法
-
-1. [template.csv](template.csv)をダウンロードし、Excelで開く
-2. 2行目以降に地図に設定したい情報を記述する（項目は自由に増やせます）
-3. Excelの「ファイル」「名前を付けて保存」を選び「ファイル形式」を「CSV UTF-8(コンマ区切り)(.csv)」に変更して、データ種類がわかるような英数ファイル名で保存する
-4. [index.csv](index.csv)をダウンロードし、Excelで開く
-5. 3で保存したファイル名とデータ種類名、アイコンファイル名を記述する
-6. [./](./) にindex.csvと3で保存したファイルをドロップし、アップロード(Upload)する
-7. 1分ほど待つと更新される（しばらくはキャッシュが使われることがあるので、プライベートモードなどで開いて確認するといい）
-
-## アイコン追加方法
-
-1. 大きさ100x100程度の画像を用意し、PNG形式、半角英数名で保存する（JPEGだと背景が透けません）
-2. [icon](icon)フォルダを表示し、エクスプローラーなどからドロップし、アップロード(Upload)する
-3. [index.csv](index.csv)や各データをダウンロードし、Excelで開き、icon項目を該当ファイル名に変更する
-4. 編集したファイルを [./](./) へアップロードする
-5. 1分ほど待つと更新される（しばらくはキャッシュが使われることがあるので、プライベートモードなどで開いて確認するといい）
-
-## 通学路などを追加する方法
-
-1. [地理院地図](https://maps.gsi.go.jp/#16/35.930774/136.163506/&base=std&ls=std&disp=1&vs=c1g1j0h0k0l0u0t0z0r0s0m0f1)の作図ツールで描いて、GeoJSON形式で保存
-2. アプリに反映する
-
-## 要望などは
-
-- この地区のキッズセーフについて [Issues](../../issues)
-- キッズセーフのアプリについて [キッズセーフのIssues](https://github.com/code4fukui/kidssafe/issues)
-
+MIT License — see [LICENSE](LICENSE).
